@@ -1,0 +1,29 @@
+{% extends 'base.html'%}
+
+
+ {% block title %}
+     Login
+ {% endblock title %}
+
+ 
+{% block contents %}
+   
+   <body style="text-align: center;">
+    <div class="container" style="width: 50%;">
+        <h3>Create an Account </h3>
+        <br>
+        <form method="POST" class="form-login" style="color:white">
+         
+
+          {{form.username.label()}}
+          {{form.username(class="form-control", placeholder="User Name")}}
+          {{form.password.label()}}
+          {{form.password(class="form-control", placeholder="Password")}}
+          <br>
+           <p>Don't have an account?  please<a href="{{url_for('register_page')}}"> click here</a> to create one</p>
+          {{form.submit(class=" btn btn-block btn-primary ")}} 
+
+        </form>
+    </div>
+</body>
+{% endblock contents %}
